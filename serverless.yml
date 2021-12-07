@@ -14,37 +14,44 @@ provider:
   stage: ${opt:stage, "local"}
 
 functions:
-  create:
-    handler: src/handler.create
-    events:
-      - http:
-          path: products
-          method: post
+  # create:
+  #   handler: src/handler.create
+  #   events:
+  #     - http:
+  #         path: products
+  #         method: post
 
-  update:
-    handler: src/handler.update
-    events:
-      - http:
-          path: products/{id}
-          method: put
+  # update:
+  #   handler: src/handler.update
+  #   events:
+  #     - http:
+  #         path: products/{id}
+  #         method: put
 
-  find:
-    handler: src/handler.find
-    events:
-      - http:
-          path: products
-          method: get
+  # find:
+  #   handler: src/handler.find
+  #   events:
+  #     - http:
+  #         path: products
+  #         method: get
 
-  findOne:
-    handler: src/handler.findOne
-    events:
-      - http:
-          path: products/{id}
-          method: get
+  # findOne:
+  #   handler: src/handler.findOne
+  #   events:
+  #     - http:
+  #         path: products/{id}
+  #         method: get
 
-  deleteOne:
-    handler: src/handler.deleteOne
+  # deleteOne:
+  #   handler: src/handler.deleteOne
+  #   events:
+  #     - http:
+  #         path: products/{id}
+  #         method: delete
+
+  updatePicture:
+    handler: src/handler.updatePicture
     events:
       - http:
-          path: products/{id}
-          method: delete
+          path: products/{id}/picture
+          method: patch
