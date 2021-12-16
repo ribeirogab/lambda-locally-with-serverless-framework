@@ -9,3 +9,4 @@ coverage
 
 upload-images/buckets/tech-talks-bucket/*
 !upload-images/buckets/tech-talks-bucket/.gitkeep
+.dynamodb
