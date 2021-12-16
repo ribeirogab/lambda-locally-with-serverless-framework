@@ -1,7 +1,11 @@
 .vscode
 
 node_modules
+yarn.lock
 coverage
 
 .build
 .serverless
+
+upload-images/buckets/tech-talks-bucket/*
+!upload-images/buckets/tech-talks-bucket/.gitkeep
