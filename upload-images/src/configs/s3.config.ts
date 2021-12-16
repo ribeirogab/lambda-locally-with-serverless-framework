@@ -43,7 +43,7 @@ class SimpleStorageService {
       .promise();
 
     if (env.NODE_ENV === 'development') {
-      // await this.sanitizeS3LocalUpload({ filename, bucketName });
+      await this.sanitizeS3LocalUpload({ filename, bucketName });
     }
   }
 
