@@ -1,0 +1,36 @@
+service: lambda-locally-with-serverless-framework
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-s3-local
+
+# custom:
+#   s3:
+#     host: localhost
+#     directory: /tmp
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  stage: ${opt:stage, "local"}
+
+resources:
+  Resources:
+    NewResource:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: tech-talks-bucket
+
+functions:
+  uploadImage:
+    handler: src/index.handler
+    events:
+      - http:
+          path: upload
+          method: post
+          cors: true
